@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toulouse — Bánh Sinh Nhật Thiết Kế Độc Bản | Hà Nội</title>
+<meta name="description" content="Toulouse — tiệm bánh homemade thiết kế độc bản tại Hà Nội. Làm thủ công từ nguyên liệu tươi mỗi ngày. Giao tận nơi. 34C Ô Chợ Dừa, Đống Đa.">
+<meta property="og:title" content="Toulouse — Bánh Sinh Nhật Homemade Hà Nội">
+<meta property="og:description" content="Bánh thiết kế độc bản, làm thủ công từ nguyên liệu tươi. Giao tận nơi Hà Nội.">
+<meta property="og:image" content="hero.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET ────────────────────────────────────────── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+  scroll-padding-top:74px;
+}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;
+  background:#F8F4ED;color:#0E0D09;
+  overflow-x:hidden;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+img,video{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit}
+::selection{background:#3B5016;color:#fff}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:#F8F4ED}
+::-webkit-scrollbar-thumb{background:#3B5016;border-radius:3px}
+
+/* ─── TOKENS ───────────────────────────────────────── */
+:root{
+  --bg:#F8F4ED;
+  --bg2:#EDE6D8;
+  --ink:#0E0D09;
+  --white:#FFFDF8;
+  --olive:#3B5016;
+  --olive2:#56731F;
+  --olive-p:#E6EDCF;
+  --gold:#B8833A;
+  --muted:#786F5E;
+  --line:rgba(59,80,22,.13);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+  --spring:cubic-bezier(.34,1.56,.64,1);
+  --sh:0 20px 60px rgba(14,13,9,.12);
+  --r:22px;
+}
+
+/* ─── GRAIN ─────────────────────────────────────────── */
+body::after{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E");
+  opacity:.4;mix-blend-mode:multiply;
+}
+
+/* ─── MESH BLOBS ────────────────────────────────────── */
+.mesh{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(100px);opacity:.38}
+.b1{width:640px;height:640px;background:radial-gradient(circle,#C8D996,#C8D99600);top:-200px;left:-200px}
+.b2{width:520px;height:520px;background:radial-gradient(circle,#EDD4C0,#EDD4C000);bottom:-160px;right:-160px;opacity:.3}
+.b3{width:380px;height:380px;background:radial-gradient(circle,#D4C0ED,#D4C0ED00);top:40%;left:55%;opacity:.18}
+
+/* ─── WRAP ──────────────────────────────────────────── */
+.wrap{max-width:1200px;margin:0 auto;padding:0 26px;position:relative;z-index:2}
+
+/* ─── NAV ───────────────────────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;transition:all .5s var(--ease)}
+nav.up{
+  background:rgba(248,244,237,.94);
+  backdrop-filter:blur(24px) saturate(160%);
+  -webkit-backdrop-filter:blur(24px) saturate(160%);
+  border-bottom:1px solid var(--line);padding:11px 0;
+}
+.nav-row{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo img{height:50px;width:auto;transition:.3s var(--ease)}
+nav.up .logo img{height:42px}
+
+.nav-links{display:flex;gap:30px;align-items:center;list-style:none}
+.nav-links a{
+  font-size:13.5px;font-weight:500;letter-spacing:.025em;
+  color:var(--ink);opacity:.7;transition:.2s;position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;left:0;bottom:-4px;
+  width:0;height:1.5px;background:var(--olive);transition:.3s var(--ease);
+}
+.nav-links a:hover{opacity:1;color:var(--olive)}
+.nav-links a:hover::after{width:100%}
+
+/* Nav CTA — links to Facebook Messenger */
+.btn-nav{
+  background:var(--ink);color:var(--white)!important;
+  opacity:1!important;padding:11px 22px;border-radius:100px;
+  font-size:13.5px;font-weight:600;letter-spacing:.025em;
+  transition:.25s var(--ease);box-shadow:0 4px 18px rgba(14,13,9,.18);
+  white-space:nowrap;display:inline-flex;align-items:center;gap:7px;
+}
+.btn-nav::after{display:none!important}
+.btn-nav:hover{background:var(--olive);transform:translateY(-1px);box-shadow:0 8px 28px rgba(59,80,22,.32)}
+
+.burger{
+  display:none;flex-direction:column;gap:5px;
+  background:none;border:none;cursor:pointer;padding:8px;z-index:110;
+  min-width:44px;min-height:44px;align-items:center;justify-content:center;
+}
+.burger span{width:23px;height:2px;background:var(--ink);border-radius:2px;transition:.3s var(--ease);display:block}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ─── HERO ──────────────────────────────────────────── */
+#home{min-height:100dvh;display:flex;align-items:center;padding:120px 0 80px;position:relative}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:68px;align-items:center}
+
+.hero-tag{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--olive);margin-bottom:26px;
+}
+.hero-tag::before{content:'';width:28px;height:1.5px;background:var(--olive);flex-shrink:0}
+.hero-dot{
+  width:7px;height:7px;border-radius:50%;background:var(--olive);
+  animation:pulse 2s infinite;flex-shrink:0;
+}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(59,80,22,.5)}50%{box-shadow:0 0 0 8px rgba(59,80,22,0)}}
+
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(44px,6vw,84px);
+  font-weight:600;line-height:1.04;letter-spacing:-.025em;
+  margin-bottom:22px;color:var(--ink);
+}
+.hero h1 em{font-style:italic;color:var(--olive)}
+
+.hero-sub{
+  font-size:clamp(15px,1.8vw,17px);color:var(--muted);
+  max-width:460px;margin-bottom:38px;line-height:1.82;
+}
+.hero-btns{display:flex;gap:13px;flex-wrap:wrap;margin-bottom:50px}
+
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:15px 28px;border-radius:100px;
+  font-family:var(--sans);font-size:15px;font-weight:600;
+  cursor:pointer;border:none;transition:.25s var(--ease);
+  letter-spacing:.01em;min-height:48px;
+}
+.btn-dark{background:var(--ink);color:var(--white);box-shadow:0 8px 24px rgba(14,13,9,.2)}
+.btn-dark:hover{background:var(--olive);transform:translateY(-2px);box-shadow:0 14px 36px rgba(59,80,22,.38)}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(14,13,9,.18)}
+.btn-ghost:hover{border-color:var(--olive);color:var(--olive)}
+
+.hero-stats{display:flex;gap:0;flex-wrap:wrap}
+.stat{padding:0 28px 0 0;margin:0 28px 0 0;border-right:1px solid var(--line)}
+.stat:last-child{border:none;padding:0;margin:0}
+.stat-n{display:block;font-family:var(--serif);font-size:36px;font-weight:600;color:var(--ink);line-height:1}
+.stat-l{font-size:12px;color:var(--muted);margin-top:5px;letter-spacing:.01em}
+
+/* Hero Visual — supports both image & video */
+.hero-vis{position:relative}
+.hero-frame{
+  border-radius:30px;overflow:hidden;
+  aspect-ratio:4/5;background:var(--olive-p);
+  box-shadow:0 32px 80px rgba(14,13,9,.18);
+  position:relative;
+}
+/* hero.mp4 plays if available; otherwise poster=hero.jpg shows */
+.hero-media{
+  width:100%;height:100%;object-fit:cover;
+  position:absolute;inset:0;
+  transition:transform .7s var(--ease);
+}
+.hero-frame:hover .hero-media{transform:scale(1.03)}
+.hero-frame::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 55%,rgba(14,13,9,.2));
+  pointer-events:none;
+}
+
+.tag-float{
+  position:absolute;background:var(--white);
+  border-radius:18px;padding:10px 16px;
+  box-shadow:0 12px 40px rgba(14,13,9,.14);
+  display:flex;align-items:center;gap:9px;
+  font-size:13px;font-weight:600;color:var(--ink);
+  z-index:3;white-space:nowrap;
+}
+.tf1{top:28px;left:-28px;animation:bob 6s ease-in-out infinite}
+.tf2{bottom:36px;right:-24px;animation:bob 5s ease-in-out infinite .9s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+
+/* ─── MARQUEE ────────────────────────────────────────── */
+.marquee-bar{background:var(--olive);overflow:hidden;padding:14px 0;position:relative;z-index:2}
+.marquee-track{display:flex;width:max-content;animation:mscroll 26s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.mi{white-space:nowrap;padding:0 36px;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.85)}
+.mi.sep{opacity:.4;padding:0 6px;font-size:10px}
+@keyframes mscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ─── SECTION BASE ────────────────────────────────────── */
+section{padding:104px 0;position:relative}
+.eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin-bottom:14px}
+h2{font-family:var(--serif);font-size:clamp(34px,5vw,60px);font-weight:600;line-height:1.08;letter-spacing:-.025em;color:var(--ink)}
+h2 em{font-style:italic;color:var(--olive)}
+.sec-sub{color:var(--muted);font-size:16px;max-width:520px;margin:16px auto 0;line-height:1.8}
+.sec-head{text-align:center;margin-bottom:64px}
+
+/* Reveal on scroll */
+.r{opacity:0;transform:translateY(38px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.r.show{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* ─── BENTO / ABOUT ───────────────────────────────────── */
+#about{background:var(--bg)}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.bcard{background:var(--white);border-radius:var(--r);overflow:hidden;border:1px solid var(--line);transition:.35s var(--ease);box-shadow:var(--sh)}
+.bcard:hover{transform:translateY(-5px);box-shadow:0 30px 80px rgba(14,13,9,.15)}
+
+/* Story card: 2×2 with image/video background */
+.bc-story{
+  grid-column:span 2;grid-row:span 2;
+  position:relative;display:flex;flex-direction:column;justify-content:flex-end;
+  min-height:500px;overflow:hidden;
+}
+/* Supports both image & video background */
+.story-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.6s var(--ease)}
+.bc-story:hover .story-bg{transform:scale(1.04)}
+.bc-story::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top,rgba(14,13,9,.78) 0%,rgba(14,13,9,.1) 55%,transparent 100%);
+}
+.story-text{position:relative;z-index:2;padding:36px}
+.story-text .eyebrow{color:rgba(255,255,255,.55)}
+.story-text h3{font-family:var(--serif);font-size:clamp(24px,3vw,36px);font-weight:600;color:var(--white);line-height:1.15;margin-bottom:12px}
+.story-text h3 em{font-style:italic;color:#C8D996}
+.story-text p{color:rgba(255,255,255,.7);font-size:15px;line-height:1.75;max-width:400px}
+
+.bc-stat{display:flex;flex-direction:column;justify-content:space-between;padding:28px;background:var(--olive-p);border-color:transparent}
+.bc-stat .big-num{font-family:var(--serif);font-size:clamp(48px,5.5vw,70px);font-weight:700;color:var(--olive);line-height:1;letter-spacing:-.03em}
+.bc-stat .bc-lbl{font-size:13px;color:var(--muted);line-height:1.55;margin-top:auto;padding-top:14px}
+.bc-stat.dark{background:var(--ink);border-color:transparent}
+.bc-stat.dark .big-num{color:#C8D996}
+.bc-stat.dark .bc-lbl{color:rgba(255,255,255,.55)}
+
+.bc-feat{display:flex;flex-direction:column;gap:14px;padding:28px}
+.bc-feat .feat-ic{width:46px;height:46px;border-radius:13px;background:var(--olive-p);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.bc-feat h4{font-family:var(--serif);font-size:20px;font-weight:600}
+.bc-feat p{font-size:13.5px;color:var(--muted);line-height:1.65}
+
+.bc-quote{
+  grid-column:span 3;display:flex;align-items:center;justify-content:center;
+  padding:40px 48px;background:var(--ink);border-color:transparent;text-align:center;
+}
+.bc-quote blockquote{font-family:var(--serif);font-size:clamp(18px,2.6vw,28px);font-style:italic;font-weight:400;color:rgba(255,255,255,.82);line-height:1.65;max-width:680px}
+.bc-quote blockquote::before{content:'\201C';margin-right:3px;color:var(--olive-p)}
+.bc-quote blockquote::after{content:'\201D';margin-left:3px;color:var(--olive-p)}
+
+/* ─── MENU (Category-based) ─────────────────────────── */
+#menu{background:var(--bg2)}
+
+/* Quick-nav pills */
+.cat-nav{
+  display:flex;gap:8px;flex-wrap:wrap;
+  justify-content:center;margin-bottom:64px;
+}
+.cat-pill{
+  padding:9px 18px;border-radius:100px;
+  border:1.5px solid var(--line);background:var(--white);
+  font-size:13px;font-weight:600;color:var(--muted);
+  transition:.25s var(--ease);white-space:nowrap;text-decoration:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.cat-pill:hover{background:var(--olive);color:#fff;border-color:var(--olive)}
+
+/* Category block */
+.cat-block{margin-bottom:72px}
+.cat-block:last-child{margin-bottom:0}
+.cat-hd{
+  display:flex;align-items:baseline;gap:16px;
+  margin-bottom:28px;padding-bottom:16px;
+  border-bottom:1px solid var(--line);
+}
+.cat-num{
+  font-family:var(--serif);font-size:clamp(36px,5vw,56px);
+  font-weight:700;color:var(--olive-p);line-height:1;
+  flex-shrink:0;
+}
+.cat-info h3{
+  font-family:var(--serif);font-size:clamp(22px,3vw,32px);
+  font-weight:600;line-height:1.1;margin-bottom:4px;
+}
+.cat-info p{font-size:14px;color:var(--muted)}
+
+/* Menu card grid — 3 col */
+.cake-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cake{
+  background:var(--white);border-radius:var(--r);overflow:hidden;
+  border:1px solid var(--line);box-shadow:0 4px 24px rgba(14,13,9,.05);
+  transition:.35s var(--ease);display:flex;flex-direction:column;
+}
+.cake:hover{transform:translateY(-8px);box-shadow:var(--sh)}
+.cake-img{aspect-ratio:1;overflow:hidden;background:var(--olive-p);position:relative;flex-shrink:0}
+.cake-img img{width:100%;height:100%;object-fit:cover;transition:.6s var(--ease)}
+.cake:hover .cake-img img{transform:scale(1.07)}
+.cake-body{padding:18px 18px 16px;flex:1;display:flex;flex-direction:column;gap:12px}
+
+/* Size chips */
+.sz-row{display:flex;gap:6px;flex-wrap:wrap}
+.sz{
+  width:34px;height:34px;border-radius:9px;
+  border:1.5px solid var(--line);background:var(--bg);
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;color:var(--muted);
+  transition:.2s var(--ease);cursor:default;
+}
+.sz:hover{background:var(--olive);color:#fff;border-color:var(--olive);transform:scale(1.1)}
+
+/* Order mini button */
+.cake-cta{
+  margin-top:auto;display:flex;align-items:center;justify-content:center;gap:7px;
+  padding:11px 16px;border-radius:12px;
+  background:var(--ink);color:var(--white);border:none;
+  font-family:var(--sans);font-size:13.5px;font-weight:600;
+  cursor:pointer;transition:.25s var(--ease);text-decoration:none;
+  min-height:44px;-webkit-tap-highlight-color:transparent;
+}
+.cake-cta:hover{background:var(--olive);transform:translateY(-2px)}
+.cake-cta:active{transform:scale(.97)}
+
+/* ─── PROCESS ────────────────────────────────────────── */
+#process{background:var(--bg)}
+.process-row{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;align-items:start;margin-top:8px}
+.step{text-align:center;position:relative}
+.step:not(:last-child)::after{content:'';position:absolute;top:26px;left:calc(50% + 38px);right:calc(-50% + 38px);height:1px;background:var(--line)}
+.step-ring{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--line);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;color:var(--olive);background:var(--white);position:relative;z-index:1}
+.step-ico{font-size:32px;margin-bottom:14px;line-height:1}
+.step h3{font-family:var(--serif);font-size:22px;font-weight:600;margin-bottom:10px}
+.step p{font-size:14px;color:var(--muted);line-height:1.75;max-width:220px;margin:0 auto}
+
+/* ─── GALLERY ────────────────────────────────────────── */
+#gallery{background:var(--bg2)}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:12px;grid-auto-flow:dense}
+.gi{border-radius:18px;overflow:hidden;background:var(--olive-p);position:relative;cursor:pointer}
+.gi img{width:100%;height:100%;object-fit:cover;transition:.6s var(--ease)}
+.gi::after{content:'';position:absolute;inset:0;background:rgba(59,80,22,0);transition:.3s}
+.gi:hover img{transform:scale(1.08)}
+.gi:hover::after{background:rgba(59,80,22,.1)}
+.gi.lg{grid-column:span 2;grid-row:span 2}
+.gi.wd{grid-column:span 2}
+
+/* Gallery video item */
+.gi.vid video{
+  width:100%;height:100%;object-fit:cover;
+  position:absolute;inset:0;
+}
+.play-ov{
+  position:absolute;inset:0;z-index:3;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(14,13,9,.18);transition:background .3s,opacity .35s;
+  cursor:pointer;
+}
+.play-ring{
+  width:64px;height:64px;border-radius:50%;
+  background:rgba(255,255,255,.92);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 32px rgba(14,13,9,.3);
+  transition:.25s var(--spring);
+}
+.play-ring svg{width:22px;height:22px;fill:var(--ink);margin-left:4px}
+.play-ov:hover .play-ring{transform:scale(1.1)}
+.gi.vid.playing .play-ov{opacity:0}
+.gi.vid.playing:hover .play-ov{opacity:1;background:rgba(14,13,9,.3)}
+/* Video badge */
+.vid-badge{
+  position:absolute;top:13px;right:13px;z-index:4;
+  background:rgba(14,13,9,.6);backdrop-filter:blur(8px);
+  color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;
+  padding:4px 10px;border-radius:100px;display:flex;align-items:center;gap:5px;
+}
+.vid-badge::before{content:'▶';font-size:9px}
+
+/* ─── REVIEWS ────────────────────────────────────────── */
+#reviews{background:var(--bg)}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rcard{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:30px;box-shadow:0 4px 24px rgba(14,13,9,.05);transition:.3s var(--ease)}
+.rcard:hover{transform:translateY(-6px);box-shadow:var(--sh)}
+.r-stars{color:var(--gold);font-size:15px;letter-spacing:3px;margin-bottom:16px}
+.r-text{font-family:var(--serif);font-size:17px;font-style:italic;color:var(--ink);opacity:.83;line-height:1.75;margin-bottom:22px}
+.r-who{display:flex;align-items:center;gap:12px}
+.r-avatar{width:46px;height:46px;border-radius:50%;background:var(--olive-p);color:var(--olive);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px;font-weight:600;flex-shrink:0}
+.r-info b{display:block;font-size:14px;font-weight:600}
+.r-info span{font-size:13px;color:var(--muted)}
+
+/* ─── ORDER ──────────────────────────────────────────── */
+#order{background:var(--bg);padding:60px 0 104px}
+.order-box{
+  background:var(--ink);border-radius:32px;
+  display:grid;grid-template-columns:1fr 1fr;
+  overflow:hidden;position:relative;
+  box-shadow:0 48px 120px rgba(14,13,9,.3);
+}
+.order-box::before{content:'';position:absolute;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(59,80,22,.35),transparent 70%);top:-140px;left:-100px;pointer-events:none}
+.order-box::after{content:'';position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(184,131,58,.18),transparent 70%);bottom:-80px;left:30%;pointer-events:none}
+
+.order-left{padding:56px 48px;position:relative;z-index:1}
+.order-left .eyebrow{color:var(--olive-p);opacity:.65}
+.order-left h2{color:var(--white);text-align:left;font-size:clamp(26px,3.8vw,48px);margin-bottom:16px}
+.order-left h2 em{color:#C8D996}
+.order-left>p{color:rgba(255,255,255,.62);font-size:16px;margin-bottom:38px;line-height:1.8}
+.clist{list-style:none;display:flex;flex-direction:column;gap:16px}
+.clist li{display:flex;align-items:center;gap:14px;color:rgba(255,255,255,.76);font-size:15px}
+.clist .lic{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+
+/* Messenger CTA in order info */
+.msn-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  margin-top:32px;background:linear-gradient(135deg,#00B2FF,#006AFF);
+  color:#fff;padding:14px 26px;border-radius:100px;
+  font-weight:600;font-size:15px;
+  box-shadow:0 8px 28px rgba(0,106,255,.35);
+  transition:.25s var(--ease);
+}
+.msn-cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(0,106,255,.5)}
+.msn-cta svg{width:20px;height:20px;fill:#fff;flex-shrink:0}
+
+/* Form side */
+.order-right{background:var(--bg);padding:48px 40px;display:flex;flex-direction:column;justify-content:center}
+.form-head{font-family:var(--serif);font-size:27px;font-weight:600;margin-bottom:8px;color:var(--ink)}
+.form-sub{font-size:14px;color:var(--muted);margin-bottom:26px;line-height:1.6}
+.fform{display:flex;flex-direction:column;gap:13px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ff{display:flex;flex-direction:column;gap:6px}
+.ff label{font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.ff input,.ff select,.ff textarea{
+  background:var(--white);border:1.5px solid var(--line);
+  border-radius:13px;padding:13px 16px;
+  font-family:var(--sans);font-size:15px;color:var(--ink);
+  transition:.2s;width:100%;min-height:48px;
+}
+.ff input:focus,.ff select:focus,.ff textarea:focus{outline:none;border-color:var(--olive);box-shadow:0 0 0 3px rgba(59,80,22,.09)}
+.ff input::placeholder,.ff textarea::placeholder{color:#B0A898}
+.ff textarea{resize:vertical;min-height:88px}
+.btn-submit{width:100%;justify-content:center;padding:16px;font-size:15.5px;margin-top:4px}
+.form-hint{text-align:center;font-size:13px;color:var(--muted);margin-top:8px}
+
+/* ─── FOOTER ─────────────────────────────────────────── */
+footer{background:var(--bg2);padding:68px 0 28px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:52px;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--line)}
+.foot-brand .logo{margin-bottom:16px;display:inline-flex}
+.foot-brand p{color:var(--muted);font-size:15px;line-height:1.8;max-width:300px}
+.socials{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.soc{width:42px;height:42px;border-radius:12px;background:var(--white);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);transition:.25s var(--ease);min-width:42px}
+.soc:hover{background:var(--olive);color:var(--white);border-color:var(--olive);transform:translateY(-2px)}
+.soc svg{width:17px;height:17px;fill:currentColor}
+.foot-col h4{font-family:var(--serif);font-size:19px;font-weight:600;margin-bottom:20px}
+.foot-col a{display:block;color:var(--muted);font-size:15px;margin-bottom:12px;transition:.2s}
+.foot-col a:hover{color:var(--olive);transform:translateX(3px)}
+.foot-bottom{text-align:center;font-size:13.5px;color:var(--muted)}
+
+/* ─── TOAST ──────────────────────────────────────────── */
+.toast{
+  position:fixed;bottom:26px;left:50%;
+  transform:translateX(-50%) translateY(110px);
+  background:var(--ink);color:var(--white);
+  padding:13px 26px;border-radius:100px;
+  font-weight:600;font-size:14px;
+  box-shadow:0 16px 48px rgba(14,13,9,.3);
+  z-index:300;transition:.45s var(--spring);
+  display:flex;align-items:center;gap:8px;pointer-events:none;
+  white-space:nowrap;max-width:90vw;
+}
+.toast.on{transform:translateX(-50%) translateY(0)}
+
+/* ─── FACEBOOK MESSENGER FAB ─────────────────────────── */
+.msn-fab{
+  position:fixed;
+  bottom:calc(26px + env(safe-area-inset-bottom, 0px));
+  right:calc(26px + env(safe-area-inset-right, 0px));
+  z-index:150;
+  width:60px;height:60px;border-radius:50%;
+  background:linear-gradient(135deg,#00B2FF 0%,#006AFF 100%);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 32px rgba(0,106,255,.45);
+  transition:.25s var(--spring);
+  animation:bob 5s ease-in-out infinite;
+}
+.msn-fab:hover{transform:scale(1.12);box-shadow:0 16px 50px rgba(0,106,255,.55);animation:none}
+.msn-fab:active{transform:scale(.95)}
+.msn-fab svg{width:28px;height:28px;fill:#fff}
+
+/* ─── ACCESSIBILITY ──────────────────────────────────── */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+a:focus-visible,button:focus-visible{outline:2px solid var(--olive);outline-offset:3px;border-radius:6px}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .r{opacity:1;transform:none}
+}
+
+/* ─── RESPONSIVE: TABLET 980–1024px ─────────────────── */
+@media(max-width:1000px){
+  .hero{grid-template-columns:1fr;text-align:center;gap:44px}
+  .hero-tag,.hero-btns,.hero-stats{justify-content:center}
+  .hero-sub{margin-left:auto;margin-right:auto}
+  .hero-vis{max-width:420px;margin:0 auto;width:100%}
+  .tf1{left:6px}.tf2{right:6px}
+
+  .bento{grid-template-columns:1fr 1fr}
+  .bc-story{grid-column:span 2}
+  .bc-quote{grid-column:span 2}
+
+  .cake-grid{grid-template-columns:repeat(2,1fr)}
+  .process-row{grid-template-columns:1fr;gap:36px;max-width:380px;margin:0 auto}
+  .step:not(:last-child)::after{display:none}
+  .reviews-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}
+  .order-box{grid-template-columns:1fr}
+  .order-left{padding:44px 36px 32px}
+  .order-right{padding:36px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+
+/* ─── RESPONSIVE: MOBILE ≤720px ─────────────────────── */
+@media(max-width:720px){
+  /* Mobile nav drawer */
+  .nav-links{
+    position:fixed;top:0;right:0;bottom:0;
+    width:min(82vw,300px);
+    background:var(--bg);
+    flex-direction:column;justify-content:center;
+    gap:28px;padding:40px 32px;
+    transform:translateX(105%);transition:.4s var(--ease);
+    box-shadow:-20px 0 60px rgba(14,13,9,.14);z-index:105;
+    overflow-y:auto;-webkit-overflow-scrolling:touch;
+  }
+  .nav-links.open{transform:translateX(0)}
+  .nav-links a{font-size:18px;opacity:1}
+  .nav-cta-desk{display:none!important}
+  .burger{display:flex}
+
+  section{padding:68px 0}
+
+  /* Bento: 2-col on mobile */
+  .bento{grid-template-columns:1fr 1fr;gap:12px}
+  .bc-story{grid-column:span 2;min-height:320px}
+  .bc-quote{grid-column:span 2;padding:26px 22px}
+
+  .cake-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .cat-nav{gap:6px}
+  .cat-pill{font-size:12px;padding:8px 14px}
+
+  /* Gallery: 2-col on mobile */
+  .gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:155px;gap:10px}
+  .gi.lg{grid-column:span 2;grid-row:span 2}
+  .gi.wd{grid-column:span 2}
+
+  /* Hero stats horizontal row */
+  .hero-stats{gap:16px;justify-content:center;flex-wrap:wrap}
+  .stat{border-right:none;padding:0 14px;margin:0;border-right:1px solid var(--line);text-align:center}
+  .stat:last-child{border:none}
+  .stat-n{font-size:28px}
+
+  .order-left{padding:36px 24px 24px}
+  .order-right{padding:28px 24px}
+  .frow{grid-template-columns:1fr}
+
+  .foot-grid{grid-template-columns:1fr;text-align:center}
+  .foot-brand p{margin:0 auto}
+  .socials{justify-content:center}
+
+  .reviews-grid{max-width:100%}
+
+  /* Larger touch targets on mobile */
+  .cake-cta{min-width:48px;min-height:48px}
+  .btn{min-height:50px;padding:14px 24px}
+}
+
+/* ─── RESPONSIVE: SMALL MOBILE ≤400px ───────────────── */
+@media(max-width:400px){
+  .wrap{padding:0 16px}
+  h2{font-size:30px}
+  .hero h1{font-size:38px}
+  .bento{grid-template-columns:1fr}
+  .bc-story{grid-column:span 1}
+  .bc-quote{grid-column:span 1}
+  .cake-grid{grid-template-columns:1fr;max-width:300px;margin:0 auto}
+  .order-left{padding:28px 18px 20px}
+  .order-right{padding:22px 16px}
+  .tag-float{font-size:12px;padding:8px 12px}
+  .tf1{left:4px}.tf2{right:4px}
+}
+</style>
+</head>
+<body>
+
+<div class="mesh" aria-hidden="true">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+</div>
+
+<a href="#main" class="sr-only">Chuyển đến nội dung chính</a>
+
+<!-- ── NAV ────────────────────────────────────────────── -->
+<nav id="nav">
+  <div class="wrap nav-row">
+    <a href="#home" class="logo" aria-label="Toulouse — về trang chủ">
+      <img src="logo.png" alt="Toulouse Bakery">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" onclick="closeNav()">Câu chuyện</a></li>
+      <li><a href="#menu" onclick="closeNav()">Menu</a></li>
+      <li><a href="#gallery" onclick="closeNav()">Gallery</a></li>
+      <li><a href="#reviews" onclick="closeNav()">Đánh giá</a></li>
+      <li>
+        <!-- Đặt bánh → Facebook Messenger -->
+        <a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener"
+           class="btn-nav" onclick="closeNav()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.683V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.561 6.963z"/></svg>
+          Đặt bánh ngay
+        </a>
+      </li>
+    </ul>
+    <!-- Desktop CTA -->
+    <a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener"
+       class="btn-nav nav-cta-desk" aria-label="Đặt bánh qua Facebook Messenger">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.683V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.561 6.963z"/></svg>
+      Đặt bánh ngay
+    </a>
+    <button class="burger" id="burger" onclick="toggleNav()" aria-label="Mở menu điều hướng" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── HERO ───────────────────────────────────────────── -->
+<header id="home" aria-labelledby="hero-title">
+  <div class="wrap" id="main">
+    <div class="hero">
+      <div class="hero-left">
+        <div class="hero-tag r">
+          <span class="hero-dot"></span>
+          Sweet &amp; Bakery Homemade · Hà Nội
+        </div>
+        <h1 class="r" id="hero-title">
+          Mỗi chiếc bánh<br>là một <em>khoảnh khắc</em><br>không thể quên
+        </h1>
+        <p class="hero-sub r">
+          Toulouse — tiệm bánh homemade thiết kế độc bản, làm thủ công mỗi ngày từ nguyên liệu tươi nhất. Giao tận tay khắp Hà Nội.
+        </p>
+        <div class="hero-btns r">
+          <!-- CTA 1: Mở Messenger trực tiếp -->
+          <a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener"
+             class="btn btn-dark">
+            Đặt bánh ngay →
+          </a>
+          <a href="#menu" class="btn btn-ghost">Xem menu</a>
+        </div>
+        <div class="hero-stats r">
+          <div class="stat">
+            <span class="stat-n" data-target="5" data-suffix="★">0★</span>
+            <div class="stat-l">5 sao đánh giá tốt</div>
+          </div>
+          <div class="stat">
+            <span class="stat-n" data-target="30000" data-suffix="+">0+</span>
+            <div class="stat-l">Khách hàng tin yêu</div>
+          </div>
+          <div class="stat">
+            <span class="stat-n">24h</span>
+            <div class="stat-l">Giao bánh tận nơi</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-vis r">
+        <div class="hero-frame">
+          <video class="hero-media" autoplay muted loop playsinline poster="hero.jpg">
+            <source src="vid-hero.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="tag-float tf1">
+          <span style="font-size:16px">🌿</span> Homemade mỗi ngày
+        </div>
+        <div class="tag-float tf2">
+          <span style="font-size:16px">💝</span> Thiết kế theo yêu cầu
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ── MARQUEE ─────────────────────────────────────────── -->
+<div class="marquee-bar" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="mi">Homemade</span><span class="mi sep">·</span>
+    <span class="mi">Thiết kế độc bản</span><span class="mi sep">·</span>
+    <span class="mi">Giao tận nơi Hà Nội</span><span class="mi sep">·</span>
+    <span class="mi">Tươi mỗi ngày</span><span class="mi sep">·</span>
+    <span class="mi">Made with love</span><span class="mi sep">·</span>
+    <span class="mi">34C Ô Chợ Dừa</span><span class="mi sep">·</span>
+    <span class="mi">Sweet &amp; Bakery</span><span class="mi sep">·</span>
+    <span class="mi">Không chất bảo quản</span><span class="mi sep">·</span>
+    <span class="mi">Homemade</span><span class="mi sep">·</span>
+    <span class="mi">Thiết kế độc bản</span><span class="mi sep">·</span>
+    <span class="mi">Giao tận nơi Hà Nội</span><span class="mi sep">·</span>
+    <span class="mi">Tươi mỗi ngày</span><span class="mi sep">·</span>
+    <span class="mi">Made with love</span><span class="mi sep">·</span>
+    <span class="mi">34C Ô Chợ Dừa</span><span class="mi sep">·</span>
+    <span class="mi">Sweet &amp; Bakery</span><span class="mi sep">·</span>
+    <span class="mi">Không chất bảo quản</span><span class="mi sep">·</span>
+  </div>
+</div>
+
+<!-- ── ABOUT / BENTO ────────────────────────────────────── -->
+<section id="about" aria-labelledby="about-title">
+  <div class="wrap">
+    <div class="sec-head r">
+      <div class="eyebrow">Câu chuyện Toulouse</div>
+      <h2 id="about-title">Không chỉ là bánh —<br>là <em>cảm xúc</em></h2>
+    </div>
+    <div class="bento">
+      <!-- Story: 2×2 với ảnh nền. Đổi <img> thành <video> khi có video -->
+      <div class="bcard bc-story r">
+        <!--
+          VIDEO STORY: Khi có video thay bằng:
+          <video class="story-bg" autoplay muted loop playsinline poster="gallery-1.jpg">
+            <source src="about-video.mp4" type="video/mp4">
+          </video>
+        -->
+        <img class="story-bg" src="story-bg.jpg" alt="Tiệm bánh Toulouse" loading="lazy">
+        <div class="story-text">
+          <div class="eyebrow">Về chúng tôi</div>
+          <h3>Sinh ra từ <em>niềm đam mê</em><br>làm bánh homemade</h3>
+          <p>Tại Toulouse, chúng tôi tin rằng mỗi dịp đặc biệt đều xứng đáng có một chiếc bánh khiến người nhận phải mỉm cười. Từng tác phẩm được chăm chút thủ công — không đụng hàng, không công nghiệp.</p>
+        </div>
+      </div>
+      <!-- Stats -->
+      <div class="bcard bc-stat r d1">
+        <div class="big-num" data-target="30000" data-suffix="+">0+</div>
+        <div class="bc-lbl">Khách hàng đã tin tưởng<br>và quay lại đặt bánh</div>
+      </div>
+      <div class="bcard bc-stat dark r d2">
+        <div class="big-num" data-target="5" data-suffix="★">0★</div>
+        <div class="bc-lbl">5 sao đánh giá tốt<br>trên Google &amp; Facebook</div>
+      </div>
+      <!-- Features -->
+      <div class="bcard bc-feat r d1">
+        <div class="feat-ic">🌿</div>
+        <h4>Nguyên liệu tươi mỗi ngày</h4>
+        <p>Không chất bảo quản, không phẩm màu công nghiệp. Nhập tươi và làm thủ công trong ngày.</p>
+      </div>
+      <div class="bcard bc-feat r d2">
+        <div class="feat-ic">🚚</div>
+        <h4>Giao hàng 24h tận nơi</h4>
+        <p>Đặt hôm nay, nhận ngày mai. Nhanh chóng, đúng hẹn, đảm bảo bánh nguyên vẹn.</p>
+      </div>
+      <div class="bcard bc-feat r d3">
+        <div class="feat-ic">🎨</div>
+        <h4>Thiết kế độc bản riêng</h4>
+        <p>Mỗi chiếc bánh là một tác phẩm riêng. Tư vấn miễn phí, sáng tạo theo ý bạn.</p>
+      </div>
+      <!-- Quote -->
+      <div class="bcard bc-quote r">
+        <blockquote>Chúng tôi không chỉ làm bánh — chúng tôi tạo ra những kỷ niệm ngọt ngào mà bạn sẽ nhớ mãi</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MENU ─────────────────────────────────────────────── -->
+<section id="menu" aria-labelledby="menu-title">
+  <div class="wrap">
+    <div class="sec-head r">
+      <div class="eyebrow">Thực đơn</div>
+      <h2 id="menu-title">Bộ sưu tập <em>bánh của chúng tôi</em></h2>
+      <p class="sec-sub">Đầy đủ phong cách độc đáo · Kích thước: <strong>12 · 14 · 16 · 18 · 20 · 22 cm</strong></p>
+    </div>
+
+    <!-- Quick-nav pills -->
+    <div class="cat-nav r">
+      <a href="#cat01" class="cat-pill">🍓 Dâu Tây &amp; Trái Cây</a>
+      <a href="#cat02" class="cat-pill">🎠 Nhân Vật Hoạt Hình</a>
+      <a href="#cat03" class="cat-pill">🌸 Hoa Kem Nghệ Thuật</a>
+      <a href="#cat04" class="cat-pill">🩵 Pastel Tối Giản</a>
+      <a href="#cat05" class="cat-pill">🎉 Confetti Rắc Màu</a>
+      <a href="#cat06" class="cat-pill">🎂 Chữ Happy Birthday</a>
+      <a href="#cat07" class="cat-pill">🎀 Ruy Băng &amp; Nơ</a>
+      <a href="#cat08" class="cat-pill">❤️ Bánh Tim</a>
+      <a href="#cat09" class="cat-pill">🤍 Ngọc Trai &amp; Cổ Điển</a>
+    </div>
+
+    <!-- CAT 01 — Dâu Tây & Trái Cây Tươi -->
+    <div class="cat-block r" id="cat01">
+      <div class="cat-hd">
+        <span class="cat-num">01</span>
+        <div class="cat-info">
+          <h3>Dâu Tây &amp; Trái Cây Tươi</h3>
+          <p>Tươi mát, ngập tràn trái cây tự nhiên mỗi ngày</p>
+        </div>
+      </div>
+      <div class="cake-grid">
+        <div class="cake"><div class="cake-img"><img src="m01-1.jpg" alt="Bánh dâu tây trái cây" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+        <div class="cake d1"><div class="cake-img"><img src="m01-2.jpg" alt="Bánh dâu tây trái cây" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+        <div class="cake d2"><div class="cake-img"><img src="m01-3.jpg" alt="Bánh dâu tây trái cây" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+      </div>
+    </div>
+
+    <!-- CAT 02 — Nhân Vật Hoạt Hình -->
+    <div class="cat-block r" id="cat02">
+      <div class="cat-hd">
+        <span class="cat-num">02</span>
+        <div class="cat-info">
+          <h3>Nhân Vật Hoạt Hình</h3>
+          <p>Dành cho bé yêu &amp; những trái tim không bao giờ lớn</p>
+        </div>
+      </div>
+      <div class="cake-grid">
+        <div class="cake"><div class="cake-img"><img src="m02-1.jpg" alt="Bánh nhân vật hoạt hình" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+        <div class="cake d1"><div class="cake-img"><img src="m02-2.jpg" alt="Bánh nhân vật hoạt hình" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+        <div class="cake d2"><div class="cake-img"><img src="m02-3.jpg" alt="Bánh nhân vật hoạt hình" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+      </div>
+    </div>
+
+    <!-- CAT 03 — Hoa Kem Nghệ Thuật -->
+    <div class="cat-block r" id="cat03">
+      <div class="cat-hd">
+        <span class="cat-num">03</span>
+        <div class="cat-info">
+          <h3>Hoa Kem Nghệ Thuật</h3>
+          <p>Hoa kem bắt tay từng cánh — tác phẩm nghệ thuật ăn được</p>
+        </div>
+      </div>
+      <div class="cake-grid">
+        <div class="cake"><div class="cake-img"><img src="m03-1.jpg" alt="Bánh hoa kem nghệ thuật" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+        <div class="cake d1"><div class="cake-img"><img src="m03-2.jpg" alt="Bánh hoa kem nghệ thuật" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+        <div class="cake d2"><div class="cake-img"><img src="m03-3.jpg" alt="Bánh hoa kem nghệ thuật" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+      </div>
+    </div>
+
+    <!-- CAT 04 — Pastel Xanh Tối Giản -->
+    <div class="cat-block r" id="cat04">
+      <div class="cat-hd">
+        <span class="cat-num">04</span>
+        <div class="cat-info">
+          <h3>Pastel Xanh Tối Giản</h3>
+          <p>Tone xanh dịu dàng, thiết kế sạch tinh tế — sang trọng không ồn ào</p>
+        </div>
+      </div>
+      <div class="cake-grid">
+        <div class="cake"><div class="cake-img"><img src="m04-1.jpg" alt="Bánh pastel xanh" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+        <div class="cake d1"><div class="cake-img"><img src="m04-2.jpg" alt="Bánh pastel xanh" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+        <div class="cake d2"><div class="cake-img"><img src="m04-3.jpg" alt="Bánh pastel xanh" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+      </div>
+    </div>
+
+    <!-- CAT 05 — Confetti Rắc Màu -->
+    <div class="cat-block r" id="cat05">
+      <div class="cat-hd">
+        <span class="cat-num">05</span>
+        <div class="cat-info">
+          <h3>Confetti Rắc Màu</h3>
+          <p>Vui tươi, đầy màu sắc — dành cho những bữa tiệc đáng nhớ</p>
+        </div>
+      </div>
+      <div class="cake-grid">
+        <div class="cake"><div class="cake-img"><img src="m05-1.jpg" alt="Bánh confetti màu sắc" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+        <div class="cake d1"><div class="cake-img"><img src="m05-2.jpg" alt="Bánh confetti màu sắc" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+        <div class="cake d2"><div class="cake-img"><img src="m05-3.jpg" alt="Bánh confetti màu sắc" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+      </div>
+    </div>
+
+    <!-- CAT 06 — Chữ Happy Birthday -->
+    <div class="cat-block r" id="cat06">
+      <div class="cat-hd">
+        <span class="cat-num">06</span>
+        <div class="cat-info">
+          <h3>Chữ Happy Birthday</h3>
+          <p>Lời chúc ngọt ngào được đặt trực tiếp lên bánh — không cần thiệp riêng</p>
+        </div>
+      </div>
+      <div class="cake-grid">
+        <div class="cake"><div class="cake-img"><img src="m06-1.jpg" alt="Bánh chữ Happy Birthday" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+        <div class="cake d1"><div class="cake-img"><img src="m06-2.jpg" alt="Bánh chữ Happy Birthday" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+        <div class="cake d2"><div class="cake-img"><img src="m06-3.jpg" alt="Bánh chữ Happy Birthday" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+      </div>
+    </div>
+
+    <!-- CAT 07 — Ruy Băng & Nơ -->
+    <div class="cat-block r" id="cat07">
+      <div class="cat-hd">
+        <span class="cat-num">07</span>
+        <div class="cat-info">
+          <h3>Ruy Băng &amp; Nơ</h3>
+          <p>Lãng mạn, nữ tính — như một món quà được gói hoàn hảo</p>
+        </div>
+      </div>
+      <div class="cake-grid">
+        <div class="cake"><div class="cake-img"><img src="m07-1.jpg" alt="Bánh ruy băng nơ" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+        <div class="cake d1"><div class="cake-img"><img src="m07-2.jpg" alt="Bánh ruy băng nơ" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+        <div class="cake d2"><div class="cake-img"><img src="m07-3.jpg" alt="Bánh ruy băng nơ" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+      </div>
+    </div>
+
+    <!-- CAT 08 — Bánh Tim -->
+    <div class="cat-block r" id="cat08">
+      <div class="cat-hd">
+        <span class="cat-num">08</span>
+        <div class="cat-info">
+          <h3>Bánh Tim</h3>
+          <p>Hình trái tim ngọt ngào — dành cho tình yêu và những dịp kỷ niệm</p>
+        </div>
+      </div>
+      <div class="cake-grid">
+        <div class="cake"><div class="cake-img"><img src="m08-1.jpg" alt="Bánh tim" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+        <div class="cake d1"><div class="cake-img"><img src="m08-2.jpg" alt="Bánh tim" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+        <div class="cake d2"><div class="cake-img"><img src="m08-3.jpg" alt="Bánh tim" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+      </div>
+    </div>
+
+    <!-- CAT 09 — Ngọc Trai & Cổ Điển -->
+    <div class="cat-block r" id="cat09">
+      <div class="cat-hd">
+        <span class="cat-num">09</span>
+        <div class="cat-info">
+          <h3>Ngọc Trai &amp; Cổ Điển</h3>
+          <p>Thanh lịch vượt thời gian — ngọc trai, ren, cổ điển tinh tế</p>
+        </div>
+      </div>
+      <div class="cake-grid">
+        <div class="cake"><div class="cake-img"><img src="m09-1.jpg" alt="Bánh ngọc trai cổ điển" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+        <div class="cake d1"><div class="cake-img"><img src="m09-2.jpg" alt="Bánh ngọc trai cổ điển" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+        <div class="cake d2"><div class="cake-img"><img src="m09-3.jpg" alt="Bánh ngọc trai cổ điển" loading="lazy"></div><div class="cake-body"><div class="sz-row"><span class="sz">12</span><span class="sz">14</span><span class="sz">16</span><span class="sz">18</span><span class="sz">20</span><span class="sz">22</span></div><a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="cake-cta">Đặt ngay →</a></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── PROCESS ────────────────────────────────────────── -->
+<section id="process" aria-labelledby="process-title">
+  <div class="wrap">
+    <div class="sec-head r">
+      <div class="eyebrow">Quy trình đặt bánh</div>
+      <h2 id="process-title">Đơn giản như <em>ăn kẹo</em></h2>
+      <p class="sec-sub">Ba bước, vài phút — bánh trong mơ sẽ đến tay bạn.</p>
+    </div>
+    <div class="process-row">
+      <div class="step r">
+        <div class="step-ring">1</div>
+        <div class="step-ico">🎂</div>
+        <h3>Chọn &amp; liên hệ</h3>
+        <p>Chọn mẫu yêu thích hoặc chia sẻ ý tưởng. Nhắn Messenger bên dưới — xong trong 1 phút.</p>
+      </div>
+      <div class="step r d1">
+        <div class="step-ring">2</div>
+        <div class="step-ico">✏️</div>
+        <h3>Tư vấn thiết kế</h3>
+        <p>Đội ngũ Toulouse phản hồi ngay, cùng bạn hoàn thiện thiết kế và xác nhận đơn hàng.</p>
+      </div>
+      <div class="step r d2">
+        <div class="step-ring">3</div>
+        <div class="step-ico">💌</div>
+        <h3>Nhận bánh &amp; tận hưởng</h3>
+        <p>Bánh được giao tận nơi đúng hẹn, đóng gói cẩn thận, đẹp đúng như trong ảnh.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GALLERY ─────────────────────────────────────────── -->
+<section id="gallery" aria-labelledby="gallery-title">
+  <div class="wrap">
+    <div class="sec-head r">
+      <div class="eyebrow">Khoảnh khắc Toulouse</div>
+      <h2 id="gallery-title">Gallery <em>đẹp mê ly</em></h2>
+      <p class="sec-sub">Những tác phẩm đã chạm đến trái tim hàng nghìn khách hàng.</p>
+    </div>
+    <div class="gal r">
+      <!-- Slot 1 — Video lớn (2×2) -->
+      <div class="gi lg vid" id="gi-v1">
+        <video id="gv-v1" poster="gal-1.jpg" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0">
+          <source src="vid-gal1.mp4" type="video/mp4">
+        </video>
+        <div class="play-ov" onclick="toggleGalVid('v1')">
+          <div class="play-ring"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <span class="vid-badge">Video</span>
+      </div>
+      <!-- Ảnh -->
+      <div class="gi"><img src="gal-2.jpg" alt="Tác phẩm bánh Toulouse" loading="lazy"></div>
+      <div class="gi"><img src="gal-3.jpg" alt="Tác phẩm bánh Toulouse" loading="lazy"></div>
+      <!-- Ảnh -->
+      <div class="gi"><img src="gal-5.jpg" alt="Tác phẩm bánh Toulouse" loading="lazy"></div>
+      <!-- Slot 2 — Video lớn (2×2) -->
+      <div class="gi lg vid" id="gi-v2">
+        <video id="gv-v2" poster="gal-4.jpg" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0">
+          <source src="vid-gal2.mp4" type="video/mp4">
+        </video>
+        <div class="play-ov" onclick="toggleGalVid('v2')">
+          <div class="play-ring"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <span class="vid-badge">Video</span>
+      </div>
+      <!-- Ảnh -->
+      <div class="gi"><img src="gal-6.jpg" alt="Tác phẩm bánh Toulouse" loading="lazy"></div>
+      <div class="gi"><img src="gal-7.jpg" alt="Tác phẩm bánh Toulouse" loading="lazy"></div>
+      <!-- Slot 3 — Video lớn (2×2) -->
+      <div class="gi lg vid" id="gi-v3">
+        <video id="gv-v3" poster="gal-8.jpg" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0">
+          <source src="vid-gal3.mp4" type="video/mp4">
+        </video>
+        <div class="play-ov" onclick="toggleGalVid('v3')">
+          <div class="play-ring"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <span class="vid-badge">Video</span>
+      </div>
+      <!-- Ảnh -->
+      <div class="gi"><img src="gal-2.jpg" alt="Tác phẩm bánh Toulouse" loading="lazy"></div>
+      <div class="gi"><img src="gal-3.jpg" alt="Tác phẩm bánh Toulouse" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── REVIEWS ─────────────────────────────────────────── -->
+<section id="reviews" aria-labelledby="reviews-title">
+  <div class="wrap">
+    <div class="sec-head r">
+      <div class="eyebrow">Khách hàng nói gì</div>
+      <h2 id="reviews-title">5 sao từ <em>trái tim</em></h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="rcard r">
+        <div class="r-stars" aria-label="5 sao">★★★★★</div>
+        <p class="r-text">"Bánh đẹp hơn cả ảnh, vị ngon xuất sắc. Cả nhà mình ai cũng khen. Chắc chắn sẽ đặt lại!"</p>
+        <div class="r-who">
+          <div class="r-avatar" aria-hidden="true">L</div>
+          <div class="r-info"><b>Linh Nguyễn</b><span>Sinh nhật con gái</span></div>
+        </div>
+      </div>
+      <div class="rcard r d1">
+        <div class="r-stars" aria-label="5 sao">★★★★★</div>
+        <p class="r-text">"Đặt gấp trong đêm mà sáng hôm sau đã có bánh. Thiết kế đúng ý 100%. Quá tuyệt vời!"</p>
+        <div class="r-who">
+          <div class="r-avatar" aria-hidden="true">H</div>
+          <div class="r-info"><b>Hoàng Minh</b><span>Sinh nhật người yêu</span></div>
+        </div>
+      </div>
+      <div class="rcard r d2">
+        <div class="r-stars" aria-label="5 sao">★★★★★</div>
+        <p class="r-text">"Tư vấn nhiệt tình, giá hợp lý, bánh thì khỏi chê. Toulouse là lựa chọn số 1 của mình rồi."</p>
+        <div class="r-who">
+          <div class="r-avatar" aria-hidden="true">T</div>
+          <div class="r-info"><b>Thu Trang</b><span>Tiệc công ty</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ORDER ───────────────────────────────────────────── -->
+<section id="order" aria-labelledby="order-title">
+  <div class="wrap">
+    <div class="order-box r">
+      <!-- Left: info + Messenger CTA -->
+      <div class="order-left">
+        <div class="eyebrow">Đặt bánh</div>
+        <h2 id="order-title">Sẵn sàng cho chiếc bánh <em>trong mơ?</em></h2>
+        <p>Nhắn tin Messenger để được tư vấn ngay. Hoặc điền form bên cạnh — đội ngũ Toulouse sẽ liên hệ lại trong 15 phút.</p>
+        <ul class="clist">
+          <li><span class="lic">📍</span><span>34C Ô Chợ Dừa, Đống Đa, Hà Nội</span></li>
+          <li><span class="lic">📞</span><span>Hotline: <b>09xx xxx xxx</b></span></li>
+          <li><span class="lic">🕘</span><span>Mở cửa: 8:00 – 21:00 hằng ngày</span></li>
+          <li>
+            <span class="lic">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.683V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.561 6.963z"/></svg>
+            </span>
+            <span>Fanpage: <b>Toulosue.Banhtuoitrongngay</b></span>
+          </li>
+        </ul>
+        <!-- Primary Messenger CTA -->
+        <a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener" class="msn-cta">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.683V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.561 6.963z"/></svg>
+          Nhắn tin Messenger ngay
+        </a>
+      </div>
+
+      <!-- Right: form (optional, opens Messenger on submit) -->
+      <div class="order-right">
+        <div class="form-head">Điền thông tin đặt bánh</div>
+        <p class="form-sub">Điền thông tin — Toulouse sẽ liên hệ qua Messenger ngay sau đó.</p>
+        <div class="fform">
+          <div class="frow">
+            <div class="ff">
+              <label for="fName">Tên của bạn *</label>
+              <input type="text" id="fName" placeholder="Nguyễn Văn A" autocomplete="name" inputmode="text">
+            </div>
+            <div class="ff">
+              <label for="fPhone">Số điện thoại *</label>
+              <input type="tel" id="fPhone" placeholder="0901 234 567" autocomplete="tel" inputmode="tel">
+            </div>
+          </div>
+          <div class="ff">
+            <label for="fCake">Loại bánh quan tâm</label>
+            <select id="fCake">
+              <option value="">-- Chọn loại bánh --</option>
+              <option value="Hoa Anh Đào">Hoa Anh Đào — 420.000đ</option>
+              <option value="Pinky Heart">Pinky Heart — 450.000đ</option>
+              <option value="Teddy's Slumber Dream">Teddy's Slumber Dream — 480.000đ</option>
+              <option value="Ngọc Trai Cổ Điển">Ngọc Trai Cổ Điển — từ 550.000đ</option>
+              <option value="Dâu Tây Tươi">Dâu Tây Tươi — từ 520.000đ</option>
+              <option value="Happy Marriage">Happy Marriage — 450.000đ</option>
+              <option value="Thiết kế riêng">Thiết kế riêng / Tư vấn thêm</option>
+            </select>
+          </div>
+          <div class="ff">
+            <label for="fNote">Ghi chú thêm</label>
+            <textarea id="fNote" placeholder="Ngày nhận, kích thước, ý tưởng thiết kế, lời nhắn trên bánh..." inputmode="text"></textarea>
+          </div>
+          <button class="btn btn-dark btn-submit" id="submitBtn" onclick="submitForm()">
+            Gửi &amp; mở Messenger →
+          </button>
+          <p class="form-hint">Nhấn gửi → Messenger mở sẵn để bạn chat ngay ⚡</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ───────────────────────────────────────────── -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#home" class="logo"><img src="logo.png" alt="Toulouse" height="52" loading="lazy"></a>
+        <p>Bánh sinh nhật homemade thiết kế độc bản — biến mọi khoảnh khắc thành kỷ niệm ngọt ngào không thể quên. Giao tận nơi Hà Nội.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/Toulosue.Banhtuoitrongngay" class="soc" aria-label="Facebook Toulouse" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://m.me/Toulosue.Banhtuoitrongngay" class="soc" aria-label="Messenger Toulouse" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.683V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.561 6.963z"/></svg>
+          </a>
+          <a href="#" class="soc" aria-label="Instagram Toulouse">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" class="soc" aria-label="TikTok Toulouse">
+            <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Khám phá</h4>
+        <a href="#about">Câu chuyện</a>
+        <a href="#menu">Menu bánh</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Đánh giá</a>
+        <a href="#process">Quy trình</a>
+      </div>
+      <div class="foot-col">
+        <h4>Liên hệ</h4>
+        <a href="https://m.me/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener">Nhắn tin Messenger</a>
+        <a href="https://www.facebook.com/Toulosue.Banhtuoitrongngay" target="_blank" rel="noopener">Facebook Fanpage</a>
+        <a href="#">34C Ô Chợ Dừa, Đống Đa</a>
+        <a href="tel:09xxxxxxxx">09xx xxx xxx</a>
+        <a href="#">8:00 – 21:00 hằng ngày</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      © 2026 Toulouse — Sweet &amp; Bakery Homemade Cafe · Made with 🌿 in Hà Nội
+    </div>
+  </div>
+</footer>
+
+<!-- Toast notification -->
+<div class="toast" id="toast" role="alert" aria-live="polite" aria-atomic="true"></div>
+
+<!-- Facebook Messenger FAB -->
+<a href="https://m.me/Toulosue.Banhtuoitrongngay"
+   target="_blank" rel="noopener"
+   class="msn-fab"
+   aria-label="Nhắn tin Messenger cho Toulouse"
+   title="Chat Facebook Messenger">
+  <svg viewBox="0 0 24 24">
+    <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.683V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.561 6.963z"/>
+  </svg>
+</a>
+
+<script>
+/* ── Nav scroll ── */
+const navEl = document.getElementById('nav');
+let lastY = 0;
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  navEl.classList.toggle('up', y > 50);
+  lastY = y;
+}, {passive:true});
+
+/* ── Mobile nav ── */
+function toggleNav() {
+  const nl = document.getElementById('navLinks');
+  const bg = document.getElementById('burger');
+  const open = nl.classList.toggle('open');
+  bg.classList.toggle('open', open);
+  bg.setAttribute('aria-expanded', String(open));
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+function closeNav() {
+  document.getElementById('navLinks').classList.remove('open');
+  const bg = document.getElementById('burger');
+  bg.classList.remove('open');
+  bg.setAttribute('aria-expanded','false');
+  document.body.style.overflow = '';
+}
+document.addEventListener('click', e => {
+  const nl = document.getElementById('navLinks');
+  if (nl.classList.contains('open') && !nl.contains(e.target) && !document.getElementById('burger').contains(e.target)) closeNav();
+});
+/* Close on Escape */
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
+
+/* ── Reveal on scroll ── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }});
+}, {threshold:.08, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.r').forEach(el => io.observe(el));
+
+/* ── Counter animation ── */
+function runCounter(el) {
+  const target = parseInt(el.dataset.target);
+  if (!target) return;
+  const suffix = el.dataset.suffix || '';
+  const dur = 1800;
+  const t0 = performance.now();
+  const fmt = v => target >= 1000 ? v.toLocaleString('vi-VN') + suffix : v + suffix;
+  const tick = now => {
+    const p = Math.min((now - t0) / dur, 1);
+    el.textContent = fmt(Math.round(target * (1 - Math.pow(1-p, 3))));
+    if (p < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+const cio = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting && e.target.dataset.target) { runCounter(e.target); cio.unobserve(e.target); }});
+}, {threshold:.5});
+document.querySelectorAll('[data-target]').forEach(el => cio.observe(el));
+
+/* ── Gallery video toggle (multiple slots) ── */
+function toggleGalVid(id) {
+  const vid  = document.getElementById('gv-' + id);
+  const item = document.getElementById('gi-' + id);
+  if (!vid) return;
+  if (vid.paused) {
+    /* Dừng tất cả video gallery khác */
+    document.querySelectorAll('.gi.vid video').forEach(v => {
+      if (v !== vid) { v.pause(); v.closest('.gi.vid').classList.remove('playing'); }
+    });
+    vid.play().then(() => item.classList.add('playing')).catch(() => {});
+  } else {
+    vid.pause();
+    item.classList.remove('playing');
+  }
+}
+/* Auto-reset khi video kết thúc */
+['v1','v2','v3'].forEach(id => {
+  const v = document.getElementById('gv-' + id);
+  if (v) v.addEventListener('ended', () => {
+    document.getElementById('gi-' + id).classList.remove('playing');
+  });
+});
+
+/* ── Quick order → scroll to form ── */
+function quickOrder(name) {
+  const sel = document.getElementById('fCake');
+  if (sel) {
+    const opt = Array.from(sel.options).find(o => o.value === name);
+    if (opt) sel.value = opt.value;
+  }
+  document.getElementById('order').scrollIntoView({behavior:'smooth'});
+  setTimeout(() => document.getElementById('fName').focus(), 600);
+}
+
+/* ── Toast ── */
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('on');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('on'), 3800);
+}
+
+/* ── Form submit → open Facebook Messenger ── */
+const MSN_URL = 'https://m.me/Toulosue.Banhtuoitrongngay';
+
+function submitForm() {
+  const name  = document.getElementById('fName').value.trim();
+  const phone = document.getElementById('fPhone').value.trim();
+  const cake  = document.getElementById('fCake').value;
+  const note  = document.getElementById('fNote').value.trim();
+
+  if (!name) {
+    showToast('⚠️ Vui lòng nhập tên của bạn');
+    document.getElementById('fName').focus();
+    return;
+  }
+  if (!phone || phone.replace(/\D/g,'').length < 9) {
+    showToast('⚠️ Vui lòng nhập số điện thoại hợp lệ');
+    document.getElementById('fPhone').focus();
+    return;
+  }
+
+  const btn = document.getElementById('submitBtn');
+  btn.textContent = '⏳ Đang mở Messenger...';
+  btn.disabled = true;
+
+  /* Open Messenger */
+  window.open(MSN_URL, '_blank', 'noopener,noreferrer');
+
+  showToast('✅ Messenger đã mở — nhắn tin cho Toulouse nhé! 💬');
+
+  /* Reset form */
+  setTimeout(() => {
+    ['fName','fPhone','fNote'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('fCake').value = '';
+    btn.textContent = 'Gửi & mở Messenger →';
+    btn.disabled = false;
+  }, 2500);
+}
+
+/* Enter key submits form */
+document.querySelectorAll('.fform input').forEach(input => {
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') submitForm(); });
+});
+</script>
+</body>
+</html>
